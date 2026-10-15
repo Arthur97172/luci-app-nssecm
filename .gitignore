@@ -1,0 +1,9 @@
+# Editor and OS noise
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python bytecode from tools/lmo.py
+__pycache__/
+*.pyc

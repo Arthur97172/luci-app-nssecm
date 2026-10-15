@@ -1,0 +1,111 @@
+# Chinese (Simplified) translation for luci-app-nssecm
+# Copyright (C) 2026 Arthur97172
+# This file is distributed under the same license as the luci-app-nssecm package.
+# Arthur97172 <Arthur97172@users.noreply.github.com>, 2026.
+#
+# Simplified Chinese catalog for luci-app-nssecm: 22 entries, covering the form
+# title, the section and option labels, the dropdown values and the messages the
+# view emits. The menu entry reuses the form title string, so it is translated
+# from the same entry.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-nssecm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 00:00+0000\n"
+"PO-Revision-Date: 2026-10-14 00:00+0000\n"
+"Last-Translator: Arthur97172 <Arthur97172@users.noreply.github.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: htdocs/luci-static/resources/view/nssecm.js:36
+msgid "Acceleration Engine"
+msgstr "加速引擎选择"
+
+#: htdocs/luci-static/resources/view/nssecm.js:44
+msgid "Acceleration Engine Mode"
+msgstr "加速引擎模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:66
+msgid "Afford NATloopback/UDP Relay/Docker Network etc."
+msgstr "启用后可能会影响到 NAT回环/UDP 代理和 Docker网络"
+
+#: htdocs/luci-static/resources/view/nssecm.js:37
+msgid "Auto"
+msgstr "自动"
+
+#: htdocs/luci-static/resources/view/nssecm.js:113
+msgid "Configuration saved, but restarting the ECM service failed: %s"
+msgstr "配置已保存，但重启 ECM 服务失败：%s"
+
+#: htdocs/luci-static/resources/view/nssecm.js:87
+msgid "Force 10GBps"
+msgstr "强制 10Gbps"
+
+#: htdocs/luci-static/resources/view/nssecm.js:84
+msgid "Force 1Gbps"
+msgstr "强制 1Gbps"
+
+#: htdocs/luci-static/resources/view/nssecm.js:85
+msgid "Force 2.5Gbps"
+msgstr "强制 2.5Gbps"
+
+#: htdocs/luci-static/resources/view/nssecm.js:86
+msgid "Force 5Gbps"
+msgstr "强制 5Gbps"
+
+#: htdocs/luci-static/resources/view/nssecm.js:32
+msgid "Global Settings"
+msgstr "全局设置"
+
+#: htdocs/luci-static/resources/view/nssecm.js:46
+msgid "Max TCP Connection"
+msgstr "最大连接数"
+
+#: htdocs/luci-static/resources/view/nssecm.js:29
+msgid "NSS ECM Control"
+msgstr "NSS 硬件加速"
+
+#: htdocs/luci-static/resources/view/nssecm.js:38
+msgid "NSS Mode"
+msgstr "NSS 模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:41
+msgid "NSS+SFE Hydrid Mode"
+msgstr "NSS+SFE 混合模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:40
+msgid "PPE Mode"
+msgstr "PPE 模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:42
+msgid "PPE+SFE Hydrid Mode"
+msgstr "PPE+SFE 混合模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:39
+msgid "SFE Mode"
+msgstr "SFE 模式"
+
+#: htdocs/luci-static/resources/view/nssecm.js:82
+msgid "SFP1 Port Speed Mode"
+msgstr "SFP1 端口速率设置"
+
+#: htdocs/luci-static/resources/view/nssecm.js:90
+msgid "SFP2 Port Speed Mode"
+msgstr "SFP2 端口速率设置"
+
+#: htdocs/luci-static/resources/view/nssecm.js:30
+msgid "Setting NSS ECM Acceleration Engine"
+msgstr "设置 NSS ECM 加速引擎"
+
+#: htdocs/luci-static/resources/view/nssecm.js:51
+msgid "This parameter limits the maximum number of connections that TCP can have open at the same time"
+msgstr "限制TCP/UDP最大并发连接数"
+
+#: htdocs/luci-static/resources/view/nssecm.js:63
+msgid "UDP Bridge Hardware Redirect Offload"
+msgstr "UDP 硬件重定向加速"

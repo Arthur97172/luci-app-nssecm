@@ -1,0 +1,14 @@
+{
+	"admin/network/nssecm": {
+		"title": "NSS ECM Control",
+		"order": 100,
+		"action": {
+			"type": "view",
+			"path": "nssecm"
+		},
+		"depends": {
+			"acl": [ "luci-app-nssecm" ],
+			"uci": { "ecm": true }
+		}
+	}
+}

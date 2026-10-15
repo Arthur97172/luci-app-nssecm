@@ -1,0 +1,14 @@
+{
+	"luci-app-nssecm": {
+		"description": "Grant access to NSS ECM Control (NSS ECM acceleration engine settings)",
+		"read": {
+			"uci": [ "ecm" ]
+		},
+		"write": {
+			"uci": [ "ecm" ],
+			"file": {
+				"/etc/init.d/qca-nss-ecm": [ "exec" ]
+			}
+		}
+	}
+}
