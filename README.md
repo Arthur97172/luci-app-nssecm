@@ -5,7 +5,40 @@ Qualcomm NSS ECM 硬件加速引擎的 LuCI 前端，用 JS 编写。
 - 中文名：**NSS 硬件加速**（菜单里显示在「网络」下）
 - 英文名：**NSS ECM Control**
 
-## 这个包做什么
+## 安装
+
+OpenWrt 24.10：
+
+```sh
+opkg install luci-app-nssecm_*.ipk
+# 中文界面需额外安装翻译包
+opkg install luci-i18n-nssecm-zh-cn_*.ipk
+```
+
+OpenWrt 25.12：
+
+```sh
+apk add --allow-untrusted luci-app-nssecm-*.apk
+# 中文界面需额外安装翻译包
+apk add --allow-untrusted luci-i18n-nssecm-zh-cn-*.apk
+```
+
+## 从源码编译
+
+在 OpenWrt 构建树（或 SDK）中：
+
+```sh
+cd openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+git clone https://github.com/Arthur97172/luci-app-nssecm.git package/luci-app-nssecm
+make menuconfig   # LuCI → Applications → luci-app-nssecm
+make package/luci-app-nssecm/compile V=s
+```
+
+产出两个包：`luci-app-nssecm` 与 `luci-i18n-nssecm-zh-cn`。
+
+## 功能特性
 
 读写 UCI 配置 `ecm`（`/etc/config/ecm`），并在保存后重启
 `/etc/init.d/qca-nss-ecm`。表单包含：
@@ -20,8 +53,6 @@ Qualcomm NSS ECM 硬件加速引擎的 LuCI 前端，用 JS 编写。
 
 另有 `wifi_plugin`、`ipv6_acc`、`ovs_acc`、`ovpn_acc`、`mwan_acc` 五个选项保留为注释
 （见 `htdocs/luci-static/resources/view/nssecm.js`）。
-
-## 为什么后端仍叫 `ecm`
 
 `/etc/config/ecm` 和 `/etc/init.d/qca-nss-ecm` 由 Qualcomm 的
 `kmod-qca-nss-ecm-premium` / `kmod-qca-nss-ecm-wifi-plugin` 包提供，**不属于这个
@@ -43,34 +74,6 @@ po/zh_Hans/nssecm.po                      简体中文
 po/templates/nssecm.pot                   翻译模板
 tools/build.sh                            用本地 SDK 构建并列出产物
 tools/lmo.py                              .lmo 解码 / 对照 .po 校验
-```
-
-## 构建
-
-放进 OpenWrt 构建树（或 SDK）的 `package/` 下：
-
-```sh
-make package/luci-app-nssecm/compile V=s
-```
-
-产出两个包：`luci-app-nssecm` 与 `luci-i18n-nssecm-zh-cn`。
-
-## 安装
-
-OpenWrt 24.10：
-
-```sh
-opkg install luci-app-nssecm_*.ipk
-# 中文界面需额外安装翻译包
-opkg install luci-i18n-nssecm-zh-cn_*.ipk
-```
-
-OpenWrt 25.12：
-
-```sh
-apk add --allow-untrusted luci-app-nssecm-*.apk
-# 中文界面需额外安装翻译包
-apk add --allow-untrusted luci-i18n-nssecm-zh-cn-*.apk
 ```
 
 ## 翻译

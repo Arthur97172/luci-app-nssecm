@@ -5,7 +5,40 @@ A JS LuCI front end for Qualcomm's NSS ECM hardware acceleration engine.
 - Chinese name: **NSS 硬件加速** (shown under the "Network" menu)
 - English name: **NSS ECM Control**
 
-## What it does
+## Installation
+
+OpenWrt 24.10:
+
+```sh
+opkg install luci-app-nssecm_*.ipk
+# install the translation package as well for a Chinese UI
+opkg install luci-i18n-nssecm-zh-cn_*.ipk
+```
+
+OpenWrt 25.12:
+
+```sh
+apk add --allow-untrusted luci-app-nssecm-*.apk
+# install the translation package as well for a Chinese UI
+apk add --allow-untrusted luci-i18n-nssecm-zh-cn-*.apk
+```
+
+## Build from source
+
+In an OpenWrt buildroot (or SDK):
+
+```sh
+cd openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+git clone https://github.com/Arthur97172/luci-app-nssecm.git package/luci-app-nssecm
+make menuconfig   # LuCI → Applications → luci-app-nssecm
+make package/luci-app-nssecm/compile V=s
+```
+
+This produces two packages: `luci-app-nssecm` and `luci-i18n-nssecm-zh-cn`.
+
+## Features
 
 It reads and writes the UCI config `ecm` (`/etc/config/ecm`) and restarts
 `/etc/init.d/qca-nss-ecm` after saving. The form holds:
@@ -21,8 +54,6 @@ It reads and writes the UCI config `ecm` (`/etc/config/ecm`) and restarts
 Five further options (`wifi_plugin`, `ipv6_acc`, `ovs_acc`, `ovpn_acc`,
 `mwan_acc`) are present but commented out — see
 `htdocs/luci-static/resources/view/nssecm.js`.
-
-## Why the backend is still called `ecm`
 
 `/etc/config/ecm` and `/etc/init.d/qca-nss-ecm` are provided by Qualcomm's
 `kmod-qca-nss-ecm-premium` / `kmod-qca-nss-ecm-wifi-plugin` packages and are
@@ -45,34 +76,6 @@ po/zh_Hans/nssecm.po                      Simplified Chinese
 po/templates/nssecm.pot                   translation template
 tools/build.sh                            build with the local SDK, list artifacts
 tools/lmo.py                              decode an .lmo / check it against a .po
-```
-
-## Building
-
-Drop it into an OpenWrt buildroot (or SDK) under `package/`:
-
-```sh
-make package/luci-app-nssecm/compile V=s
-```
-
-This produces two packages: `luci-app-nssecm` and `luci-i18n-nssecm-zh-cn`.
-
-## Installation
-
-OpenWrt 24.10:
-
-```sh
-opkg install luci-app-nssecm_*.ipk
-# install the translation package as well for a Chinese UI
-opkg install luci-i18n-nssecm-zh-cn_*.ipk
-```
-
-OpenWrt 25.12:
-
-```sh
-apk add --allow-untrusted luci-app-nssecm-*.apk
-# install the translation package as well for a Chinese UI
-apk add --allow-untrusted luci-i18n-nssecm-zh-cn-*.apk
 ```
 
 ## Translations
