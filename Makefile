@@ -11,7 +11,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_NAME:=luci-app-nssecm
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 # 版本约定：每次提交 PKG_RELEASE +1（1.0.0-r1 ~ r9）；
 # 达到 r10 时 PKG_VERSION 末位 +1（1.0.0 -> 1.0.1），PKG_RELEASE 重置为 1。
 PKG_RELEASE:=1

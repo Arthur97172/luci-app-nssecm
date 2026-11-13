@@ -22,8 +22,31 @@ return view.extend({
 		return uci.load('ecm');
 	},
 
+	/*
+	 * Argon 把 .cbi-section 画成一张没有内边距的卡片，而 .cbi-section-node
+	 * 只在子节点 id 以 cbi-config- / cbi-argon- 开头时才补底部内边距；本页
+	 * 的节点是 cbi-ecm-*，所以最后一个字段会贴着卡片下边缘。这里补上一条与
+	 * 行距一致的留白：优先跟随 Argon 的 --field-gap，其它主题回退到 1rem。
+	 *
+	 * 写成 <style> 而不是节点上的行内样式，是因为保存后表单会重新渲染子节点。
+	 * #cbi-ecm 是 form.Map('ecm') 固定生成的容器 id，作用域仅限本页。
+	 */
+	setupStyle: function() {
+		if (document.getElementById('nssecm-style') != null)
+			return;
+
+		document.head.appendChild(E('style', {
+			'id': 'nssecm-style',
+			'type': 'text/css'
+		}, [
+			'#cbi-ecm .cbi-section-node { padding-bottom: var(--field-gap, 1rem); }'
+		]));
+	},
+
 	render: function() {
 		var m, s, o;
+
+		this.setupStyle();
 
 		m = new form.Map('ecm', _('NSS ECM Control'),
 			_('Setting NSS ECM Acceleration Engine'));
